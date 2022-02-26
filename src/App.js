@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Title from './components/Header';
+import Addtodo from './components/Addtodo';
+import TodoList from './components/TodoList';
+import { useState } from 'react';
 
 function App() {
+  const [taskList,setTaskList] = useState([]);
+
+  const updateTaskList = (event) => {
+    if(event.target.value !== ''){
+      setTaskList([...taskList,{id: taskList.length, payload: event.target.value}])
+      event.target.value = '';
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <h1>task list</h1> */}
+      <Title>task list</Title>
+      <Addtodo updateTaskList={updateTaskList}/>
+      {taskList.length === 0? "you have no tasks" : <ul>{taskList.map(task => {
+        return <TodoList task = {task} key = {task.id}/>
+      })}</ul>}
+      
+    </>
   );
 }
 
