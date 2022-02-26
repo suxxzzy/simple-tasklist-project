@@ -1,5 +1,6 @@
 #심플 투두리스트
-https://user-images.githubusercontent.com/92836893/155844544-f079a248-c480-4ecc-9d7f-becb1929ddae.mp4
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/92836893/155844671-aea4c443-bd53-4f07-a776-758a27f8b886.gif)
+
 
 ##엔터 입력 시 즉시 투두리스트 생성
 
